@@ -22,9 +22,6 @@ public class LineItem {
 
     @Override
     public String toString() {
-        return "LineItem{" +
-                "product=" + product +
-                ", quantity=" + quantity +
-                '}';
+        return "LineItem{" + "product=" + product + ", quantity=" + quantity + '}';
     }
 }

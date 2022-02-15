@@ -8,8 +8,8 @@ public class CreditCard {
         this.cardNumber = cardNumber;
     }
 
-    public Optional<Object> mkPayment(int value) {
-        if(Math.random() > 0.3) {
+    public Optional<Payment> mkPayment(int value) {
+        if (Math.random() > 0.3) {
             return Optional.of(new Payment(this, value, UUID.randomUUID()));
         } else {
             return Optional.empty();
@@ -18,8 +18,6 @@ public class CreditCard {
 
     @Override
     public String toString() {
-        return "CreditCard{" +
-                "cardNumber=" + cardNumber +
-                '}';
+        return "CreditCard{" + "cardNumber=" + cardNumber + '}';
     }
 }

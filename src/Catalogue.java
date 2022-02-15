@@ -9,11 +9,17 @@ public class Catalogue {
     private static Map<String, Product> productMap = new HashMap<>();
 
     static {
-        productMap.put("Electric Toothbrush", new Product("electric toothbrush", 3550, ProductType.PHYSICAL));
-        productMap.put("Baby Alarm", new Product("baby alarm", 4999, ProductType.DIGITAL));
+        productMap.put("Electric Toothbrush", new Product("electric toothbrush",
+                3550,
+                ProductType.PHYSICAL));
+        productMap.put("Baby Alarm", new Product("baby alarm",
+                4999,
+                ProductType.DIGITAL));
     }
 
     public static Product getProduct(String productName) {
         return productMap.get(productName);
     }
+
+
 }

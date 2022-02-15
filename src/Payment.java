@@ -14,10 +14,6 @@ public class Payment {
 
     @Override
     public String toString() {
-        return "Payment{" +
-                "creditCard=" + creditCard +
-                ", value=" + value +
-                ", uuid=" + uuid +
-                '}';
+        return "Payment{" + "creditCard=" + creditCard + ", value=" + value + ", uuid=" + uuid + '}';
     }
 }
