@@ -5,7 +5,7 @@ import java.util.stream.Collectors;
 public class ShoppingCart {
     private List<LineItem> lineItems = new ArrayList<>();
 
-    private void addLineItem(LineItem lineItem) {
+    public void addLineItem(LineItem lineItem) {
         lineItems.add(lineItem);
     }
 

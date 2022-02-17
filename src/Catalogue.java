@@ -6,6 +6,17 @@ public class Catalogue {
     public final static int SHIPPING_RATE = 5;
 
     private static Map<String, Product> productMap = Map.of(
+            "Electric Toothbrush", new PhysicalProduct("electric toothbrush",
+                    3000,
+                    4000),
+            "Baby Alarm", new PhysicalProduct("baby alarm",
+                    5000,
+                    1000),
+            "War and Peace (e-book)", new DigitalProduct("War and Peace (e-book)",
+                    1000)
+    );
+
+ /*   private static Map<String, Product> productMap = Map.of(
             "Electric Toothbrush", new Product("electric toothbrush",
                     3000,
                     ProductType.PHYSICAL,
@@ -18,7 +29,7 @@ public class Catalogue {
                     1000,
                     ProductType.DIGITAL,
                     -1)
-    );
+    );*/
 /*    private static Map<String, Product> productMap = new HashMap<>();
 
     static {

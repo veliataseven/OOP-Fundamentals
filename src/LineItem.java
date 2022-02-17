@@ -12,28 +12,24 @@ public class LineItem {
         this(li.product, li.quantity);
     }
 
-    public Product getProduct() {
-        return product;
+    public int calculateShippingCost() {
+        return product.calculateShippingCost() * quantity;
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public Product getProduct() {
+        return product;
     }
 
     public int getQuantity() {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-
     public int getPrice() {
-        return quantity * product.getPrice();
+        return product.getPrice() * quantity;
     }
 
     @Override
     public String toString() {
-        return "\n\t\t" + "LineItem{" + "product=" + product + ", quantity=" + quantity + '}';
+        return "\n\t\t" + "LineItem{" + "product=" + product + ", quantity=" + quantity + ", price=" + getPrice() + '}';
     }
 }
