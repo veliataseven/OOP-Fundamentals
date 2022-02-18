@@ -1,19 +1,38 @@
 import java.util.UUID;
 
-public class Payment {
+public class Payment implements PaymentIntf{
 
-    private CreditCard creditCard;
+    private PaymentMethod paymentMethod;
     private int value;
-    private UUID uuid;
+    private UUID transactionId;
 
-    public Payment(CreditCard creditCard, int value, UUID uuid) {
-        this.creditCard = creditCard;
+    public Payment(PaymentMethod paymentMethod, int value, UUID transactionId) {
+        this.paymentMethod = paymentMethod;
         this.value = value;
-        this.uuid = uuid;
+        this.transactionId = transactionId;
     }
 
     @Override
     public String toString() {
-        return "Payment{" + "creditCard=" + creditCard + ", value=" + value + ", uuid=" + uuid + '}';
+        return "Payment{" +
+                "paymentMethod=" + paymentMethod +
+                ", value=" + value +
+                ", transactionId=" + transactionId +
+                '}';
+    }
+
+    @Override
+    public void execute() {
+
+    }
+
+    @Override
+    public void setValue(int value) {
+        this.value = value;
+    }
+
+    @Override
+    public int getValue() {
+        return value;
     }
 }

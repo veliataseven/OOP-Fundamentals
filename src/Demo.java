@@ -1,13 +1,28 @@
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
 import java.util.stream.Collectors;
 
 public class Demo {
 
     public static void main(String[] args) {
 
-        Customer janeDoe = new Customer ("Jane Doe", 5420793615183044L);
+        PaymentMethod eftAccount = new EftAccount("jane@janedoe.com");
+
+        // create a new payment using that EFT account 
+        PaymentIntf payment = new Payment(eftAccount, 100, UUID.randomUUID());
+
+        // create a payment with the same characteristics but with added verification
+        PaymentIntf highValuePayment = new HighValuePayment(payment);
+
+        // make a reversible payment from either one 
+        ReversiblePayment reversiblePayment = new ReversiblePayment(payment);
+        System.out.println(reversiblePayment);
+        ReversiblePayment reversibleHighValuePayment = new ReversiblePayment(highValuePayment);
+        System.out.println(reversibleHighValuePayment);
+
+      /*  Customer janeDoe = new Customer ("Jane Doe", 5420793615183044L);
 
         Product toothBrush = Catalogue.getProduct("Electric Toothbrush");
         Product babyAlarm = Catalogue.getProduct("Baby Alarm");
@@ -18,7 +33,7 @@ public class Demo {
 
         cart.addLineItem(toothbrushes);
         cart.addLineItem(new LineItem(babyAlarm, 1));
-        cart.addLineItem(new LineItem(warAndPeace, 1));
+        cart.addLineItem(new LineItem(warAndPeace, 1));*/
 
      /*   Customer acme = new BusinessCustomer("Acme Products",
                 4556642663443553L,
