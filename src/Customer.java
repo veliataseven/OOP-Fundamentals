@@ -19,7 +19,7 @@ public class Customer implements Comparable<Customer> {
         return 0;
     }
 
-    public Optional<Order> checkout(ShoppingCart cart,  String paymentMethodNickname) {
+    public Optional<Order> checkout(ShoppingCart cart, String paymentMethodNickname) {
         Optional<PaymentMethod> paymentMethod = Optional.ofNullable(paymentMethods.get(paymentMethodNickname));
         Optional<Payment> payment = paymentMethod.flatMap(pm -> pm.mkPayment(cart.getTotalCost()));
         return payment.map(value -> new Order(this, cart, Optional.of(value)));

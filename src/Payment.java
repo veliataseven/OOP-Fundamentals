@@ -1,6 +1,6 @@
 import java.util.UUID;
 
-public class Payment implements PaymentIntf{
+public class Payment implements PaymentIntf {
 
     private PaymentMethod paymentMethod;
     private int value;
@@ -23,7 +23,6 @@ public class Payment implements PaymentIntf{
 
     @Override
     public void execute() {
-
     }
 
     @Override

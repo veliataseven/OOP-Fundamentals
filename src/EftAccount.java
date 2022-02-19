@@ -1,7 +1,7 @@
 import java.util.Optional;
 import java.util.UUID;
 
-public class EftAccount implements PaymentMethod{
+public class EftAccount implements PaymentMethod {
     private final String emailAddress;
 
     public EftAccount(String emailAddress) {

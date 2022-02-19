@@ -1,4 +1,4 @@
-public class ReversiblePayment implements PaymentIntf{
+public class ReversiblePayment implements PaymentIntf {
 
     private final PaymentIntf payment;
 

@@ -1,7 +1,7 @@
 import java.util.Optional;
 import java.util.UUID;
 
-public class CreditCard implements PaymentMethod{
+public class CreditCard implements PaymentMethod {
     private final long cardNumber;
 
     public CreditCard(long cardNumber) {

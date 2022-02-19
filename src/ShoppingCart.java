@@ -9,7 +9,7 @@ public class ShoppingCart {
         lineItems.add(lineItem);
     }
 
-    public void addLineItem(Product prod, int quantity){
+    public void addLineItem(Product prod, int quantity) {
         this.addLineItem(new LineItem(prod, quantity));
     }
 
@@ -26,7 +26,7 @@ public class ShoppingCart {
     }
 
     public int getTotalCost() {
-/*        return products.stream().mapToInt(product -> product.getPrice()).sum();
+/*      return products.stream().mapToInt(product -> product.getPrice()).sum();
         return lineItems.stream()
                 .mapToInt(lineItem -> lineItem.getProduct().getPrice())
                 .sum();*/

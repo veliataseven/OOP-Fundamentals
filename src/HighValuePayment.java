@@ -1,4 +1,4 @@
-public class HighValuePayment implements PaymentIntf{
+public class HighValuePayment implements PaymentIntf {
 
     private final PaymentIntf payment;
 
@@ -9,12 +9,10 @@ public class HighValuePayment implements PaymentIntf{
     @Override
     public void execute() {
         // verify this payment
-
     }
 
     @Override
     public void setValue(int value) {
-
     }
 
     @Override

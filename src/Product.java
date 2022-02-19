@@ -1,41 +1,43 @@
-public abstract class Product {
+public abstract class Product implements Shippable, Comparable<Product> {
 
-    private final String name;
-    private int price;
-    private float discount;
+    private String name;
+    private int basePrice;
+    private int productDiscount;
 
-    public Product(String name, int price) {
+    public Product(String name, int basePrice) {
         this.name = name;
-        this.price = price;
+        this.basePrice = basePrice;
     }
 
     public String getName() {
         return name;
     }
 
-   /* public int getPrice() {
-        int shippingCost = type.getShippingCost(weight);
-      *//*  if(type == ProductType.PHYSICAL) {
-            shippingCost = weight * Catalogue.SHIPPING_RATE;
-        } else {
-            shippingCost = 0;
-        }*//*
-        return (price * (100 - discount)) / 100 + shippingCost;
-    }*/
-
-    public int getPrice() {
-        int shippingCost = calculateShippingCost();
-        return Math.round((1-discount) * price) + shippingCost;
-    }
-
-    public void setDiscount(float discount) {
-        this.discount = discount;
+    public int getBasePrice() {
+        return basePrice;
     }
 
     @Override
-    public String toString() {
-        return "Product{" + "name='" + name + '\'' + ", price=" + price + ", discount=" + discount + '}';
+    public int compareTo(Product otherProduct) {
+        return name.compareTo(otherProduct.name);
     }
 
-    public abstract int calculateShippingCost();
+    public void setDiscount(int productDiscount) {
+        this.productDiscount = productDiscount;
+    }
+
+    public int getProductDiscount() {
+        return productDiscount;
+    }
+
+    public abstract PriceCalculator createPriceCalculator();
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + basePrice +
+                ", discount=" + productDiscount +
+                '}';
+    }
 }

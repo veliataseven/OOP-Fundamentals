@@ -1,7 +1,7 @@
 import java.util.Optional;
 import java.util.UUID;
 
-public class BankAccount implements PaymentMethod{
+public class BankAccount implements PaymentMethod {
 
     private final int sortCode;
     private final long accountNumber;

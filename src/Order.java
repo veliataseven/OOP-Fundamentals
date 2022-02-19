@@ -14,7 +14,11 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Order{" + "\n\t" + "customer=" + customer + "\n\t" + "cart=" + cart + "\n\t" + "payment=" + payment + '}';
+        return "Order{" +
+                "customer=" + customer +
+                ", cart=" + cart +
+                ", payment=" + payment +
+                '}';
     }
 
     public ShoppingCart getCart() {

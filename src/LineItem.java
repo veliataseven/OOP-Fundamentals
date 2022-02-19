@@ -12,10 +12,6 @@ public class LineItem {
         this(li.product, li.quantity);
     }
 
-    public int calculateShippingCost() {
-        return product.calculateShippingCost() * quantity;
-    }
-
     public Product getProduct() {
         return product;
     }
@@ -25,11 +21,16 @@ public class LineItem {
     }
 
     public int getPrice() {
-        return product.getPrice() * quantity;
+        PriceCalculator priceCalculator = product.createPriceCalculator();
+        return priceCalculator.calculatePrice(quantity);
     }
 
     @Override
     public String toString() {
-        return "\n\t\t" + "LineItem{" + "product=" + product + ", quantity=" + quantity + ", price=" + getPrice() + '}';
+        return "\n\t" + "LineItem{" +
+                "product=" + product +
+                ", quantity=" + quantity +
+                ", price=" + getPrice() +
+                '}';
     }
 }

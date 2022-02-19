@@ -1,4 +1,4 @@
-public class NonprofitCustomer extends Customer{
+public class NonprofitCustomer extends Customer {
 
     public NonprofitCustomer(String name) {
         super(name);
